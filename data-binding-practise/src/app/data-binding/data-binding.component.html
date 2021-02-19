@@ -1,0 +1,90 @@
+<main>
+  <section>
+    <h1>Data Binding in Angular</h1>
+    <ol>
+      <li>String Interpolation: {{ "vaue" }}</li>
+      <li>Properties Binding: [property] = "Value"</li>
+      <li>Event Binding: (event)="value"</li>
+      <li>2 way binding: [()] = "value"</li>
+    </ol>
+    <br />
+    <hr />
+  </section>
+
+  <section>
+    <h2>Requirement</h2>
+    <ol>
+      <li>
+        Create Input field which UPDATES a property ("username") via
+        2-way-binding
+      </li>
+      <li>
+        Output the username property via String Interpolation (inside paragraph
+        below the input)
+      </li>
+      <li>
+        Add a button which many only be cickled if the username is NOT an empty
+        string
+      </li>
+      <li>
+        Upon clicking the button, the username should be reset to an empty
+        string
+      </li>
+    </ol>
+
+    <br />
+    <hr />
+  </section>
+
+  <section>
+    <h2>How did I approached?</h2>
+
+    <ul>
+      <li>I created an application from scratch.</li>
+      <li>
+        Started with angular.json and took a good glance of the configuration.
+      </li>
+      <li>Then I checked index.html and emptied all the content</li>
+      <li>Next stop was app.module.ts</li>
+      <hr />
+      <li>I created Component called data-binding</li>
+      <li>
+        Then, I created data-binding.component.ts and added 3 important part:
+        <ul>
+          <li>Import: Imported @Component decorator</li>
+          <li>Use @Component: configured - selector and templateUrl</li>
+          <li>Exported the class</li>
+        </ul>
+      </li>
+      <li>
+        It's time to let the root component know about new component.
+        <p>I registered newly created component inside app.module.ts</p>
+      </li>
+      <li>
+        I created basic outline for the requirements: input field, button,
+        paragraph.
+      </li>
+      <li>Time for some variable and Text Interpolation.</li>
+      <li>
+        Used 2-way data binding for inputtext to update userName value
+        everywhere
+      </li>
+      <li>Added property binding for "disabled" property of the button</li>
+      <li>Added event binding for "click" event of the button</li>
+      <li>Incrementally added logic in component</li>
+      <li>Added selector specifed in the component to app.component.html</li>
+    </ul>
+
+    <br />
+    <hr />
+  </section>
+
+  <section id="demo">
+    <h2>!!! Demo Time !!!</h2>
+    <input type="text" [(ngModel)]="userName" />
+    <p>This value is displayed using String Interpolation: {{ userName }}</p>
+    <button [disabled]="isUserNameEmpty()" (click)="resetUserName()">
+      Add {{ userName }} to Database
+    </button>
+  </section>
+</main>

@@ -9,7 +9,7 @@ export class ServerComponent implements OnInit {
 
   allowNewServer = false;
   serverCreationStatus = "No server was created";
-  serverName: string = "";
+  serverName: string = "2WayBindingServerName";
 
   constructor() {
     setTimeout(()=>{
@@ -32,6 +32,7 @@ export class ServerComponent implements OnInit {
   }
 
   onUpdateServerName(event: Event){
+    // target is of typenInput element
     this.serverName = (<HTMLInputElement> event.target).value;
   }
 }

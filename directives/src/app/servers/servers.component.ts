@@ -12,9 +12,11 @@ export class ServersComponent{
     allowNewServer: boolean =  false;
     serverCreationStatus: string = "No server was created!"
     serverCreated: boolean = false;
+    servers = ['Testserver', 'Testserver 2']
 
     onCreateServer(){
         this.serverCreated = true;
+        this.servers.push(this.serverName);
         this.serverCreationStatus = `${this.serverName} was created`;
     }
 

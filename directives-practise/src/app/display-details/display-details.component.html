@@ -1,0 +1,14 @@
+<section>
+  <button (click)="logBtnClicks()">Display Details</button>
+  <p *ngIf="toggle">Secret Password: Tuna</p>
+
+  <div
+    *ngFor="let timeStampLog of logs; let i = index"
+    [ngStyle]="{
+      backgroundColor: i >= 5 ? 'blue' : 'transparent'
+    }"
+    [ngClass]="{ 'white-text': i >= 5 }"
+  >
+    {{ "Button Clicked at: " + timeStampLog }}
+  </div>
+</section>

@@ -1,5 +1,9 @@
 <div class="container">
-  <app-cockpit></app-cockpit>
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bluePrintCreated)="onBluePrintAdded($event)"
+  >
+  </app-cockpit>
   <hr />
   <div class="row">
     <div class="col-xs-12"></div>
@@ -7,5 +11,14 @@
       *ngFor="let serverElement of serverElements"
       [srvElement]="serverElement"
     ></app-server-element>
+  </div>
+
+  <hr />
+  <hr />
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <app-grand-parent-component></app-grand-parent-component>
+    </div>
   </div>
 </div>

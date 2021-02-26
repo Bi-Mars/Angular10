@@ -1,0 +1,8 @@
+*{
+    margin: 5px;
+}
+
+#parent{
+    background-color: red;
+    border: 1px solid black;
+}

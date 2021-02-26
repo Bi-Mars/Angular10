@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12" id="grandParent">
+    <button (click)="sendMessageFromGrandParent()">
+      Click Grand-Parent Component
+    </button>
+    <p>{{ message }}</p>
+    <app-parent-component
+      (messageEventParent)="receiveMessageFromParent($event)"
+      (messageEventChild)="receiveMessageFromParent($event)"
+    >
+    </app-parent-component>
+  </div>
+</div>
